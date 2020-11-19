@@ -1,8 +1,16 @@
 import React from 'react';
 
+import {
+  Switch,
+  Route,
+  Link,
+} from 'react-router-dom';
+
 import styled from '@emotion/styled';
 
 import HomePage from './HomePage';
+
+import FoodPage from './FoodPage';
 
 const GridLayout = styled.div({
   display: 'grid',
@@ -44,10 +52,15 @@ export default function App() {
       <Section>
         <AppContainer>
           <AppHeader>
-            <h2>오늘 뭐 먹지?!</h2>
+            <h2>
+              <Link to="/">오늘 뭐 먹지?!</Link>
+            </h2>
           </AppHeader>
           <AppContent>
-            <HomePage />
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/food" component={FoodPage} />
+            </Switch>
           </AppContent>
           <AppFooter />
         </AppContainer>
