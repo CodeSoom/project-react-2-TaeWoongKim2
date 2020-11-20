@@ -4,6 +4,16 @@ import { render, fireEvent } from '@testing-library/react';
 
 import HomePage from './HomePage';
 
+
+const mockPush = jest.fn();
+
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useHistory() {
+    return { push: mockPush };
+  },
+}));
+
 describe('HomePage', () => {
   function renderApp() {
     return render(<HomePage />);
@@ -26,5 +36,7 @@ describe('HomePage', () => {
     expect(button).not.toBeNull();
 
     fireEvent.click(button);
+
+    expect(mockPush).toBeCalledWith('/food');
   });
 });
