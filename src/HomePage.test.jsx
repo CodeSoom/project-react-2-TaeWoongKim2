@@ -1,8 +1,12 @@
 import React from 'react';
 
+import { useDispatch, useSelector } from 'react-redux';
+
 import { render, fireEvent } from '@testing-library/react';
 
 import HomePage from './HomePage';
+
+import FOODS from '../fixtures/foods';
 
 
 const mockPush = jest.fn();
@@ -14,7 +18,22 @@ jest.mock('react-router-dom', () => ({
   },
 }));
 
+jest.mock('react-redux');
+
 describe('HomePage', () => {
+  const dispatch = jest.fn();
+
+  beforeEach(() => {
+    dispatch.mockClear();
+
+    useDispatch.mockImplementation(() => dispatch);
+
+    useSelector.mockImplementation((selector) => selector({
+      food: FOODS[0],
+      foods: FOODS,
+    }));
+  });
+
   function renderApp() {
     return render(<HomePage />);
   }
