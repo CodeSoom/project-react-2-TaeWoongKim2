@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import {
   Switch,
@@ -6,11 +6,15 @@ import {
   Link,
 } from 'react-router-dom';
 
+import { useDispatch } from 'react-redux';
+
 import styled from '@emotion/styled';
 
 import HomePage from './HomePage';
 
 import FoodPage from './FoodPage';
+
+import { loadFoodData } from './slice';
 
 const GridLayout = styled.div({
   display: 'grid',
@@ -46,6 +50,12 @@ const AppFooter = styled.footer({
 });
 
 export default function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadFoodData());
+  });
+
   return (
     <GridLayout>
       <Aside><></></Aside>

@@ -2,10 +2,25 @@ import React from 'react';
 
 import { useHistory } from 'react-router-dom';
 
+import { useDispatch, useSelector } from 'react-redux';
+
+import { setFood } from './slice';
+
+import { get, getRandomNumber } from './utils';
+
 export default function HomePage() {
   const history = useHistory();
 
+  const dispatch = useDispatch();
+
+  const foods = useSelector(get('foods'));
+
   function handleClick() {
+    const foodId = getRandomNumber(foods.length);
+    const selectedFood = foods.find((food) => food.id === foodId);
+
+    dispatch(setFood(selectedFood));
+
     const url = '/food';
     history.push(url);
   }
