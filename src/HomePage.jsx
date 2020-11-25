@@ -15,14 +15,17 @@ export default function HomePage() {
 
   const foods = useSelector(get('foods'));
 
-  function handleClick() {
+  function handleMenuPickerClick() {
     const index = getRandomNumber(foods.length);
     const selectedFood = foods.find((food) => food.id === foods[index].id);
 
     dispatch(setFood(selectedFood));
 
-    const url = '/food';
-    history.push(url);
+    history.push('/food');
+  }
+
+  function handleMenuListClick() {
+    history.push('/foods');
   }
 
   return (
@@ -30,7 +33,8 @@ export default function HomePage() {
       <h1>오늘 뭐 먹지?!</h1>
       <p>무엇을 먹을지 고민이라면,</p>
       <p>오늘 한 끼 여기에 맡겨라!</p>
-      <button type="button" onClick={handleClick}>메뉴 뽑기</button>
+      <button type="button" onClick={handleMenuPickerClick}>메뉴 뽑기</button>
+      <button type="button" onClick={handleMenuListClick}>메뉴판 보기</button>
     </>
   );
 }

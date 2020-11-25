@@ -14,6 +14,8 @@ import HomePage from './HomePage';
 
 import FoodPage from './FoodPage';
 
+import FoodListPage from './FoodListPage';
+
 import { loadFoodData } from './slice';
 
 const GridLayout = styled.div({
@@ -70,6 +72,7 @@ export default function App() {
             <Switch>
               <Route exact path="/" component={HomePage} />
               <Route exact path="/food" component={FoodPage} />
+              <Route exact path="/foods" component={FoodListPage} />
             </Switch>
           </AppContent>
           <AppFooter />
