@@ -296,7 +296,7 @@ const foods = [
     dishes: [],
   },
   {
-    id: 1036,
+    id: 1037,
     name: '감바스',
     description: '',
     category: '양식',
@@ -304,7 +304,7 @@ const foods = [
     dishes: [],
   },
   {
-    id: 1037,
+    id: 1038,
     name: '똠얌꿍(매운 새우 수프)',
     description: '',
     category: '태국식',
@@ -312,7 +312,7 @@ const foods = [
     dishes: [],
   },
   {
-    id: 1038,
+    id: 1039,
     name: '팟타이(태국식 볶음면)',
     description: '',
     category: '태국식',
@@ -320,7 +320,7 @@ const foods = [
     dishes: [],
   },
   {
-    id: 1039,
+    id: 1040,
     name: '카오팟(볶음밥)',
     description: '',
     category: '태국식',
@@ -328,7 +328,7 @@ const foods = [
     dishes: [],
   },
   {
-    id: 1040,
+    id: 1041,
     name: '팟크라파오무(바질과 돼지고기 볶음)',
     description: '',
     category: '태국식',
@@ -336,7 +336,7 @@ const foods = [
     dishes: [],
   },
   {
-    id: 1041,
+    id: 1042,
     name: '깽케우완카이(그린 치킨 카레)',
     description: '',
     category: '태국식',
@@ -344,7 +344,7 @@ const foods = [
     dishes: [],
   },
   {
-    id: 1042,
+    id: 1043,
     name: '쌀국수 포(Pho)',
     description: '베트남의 대표 음식으로 담백하고 든든해서 한끼 식사로 손색이 없다.',
     category: '베트남식',
@@ -352,7 +352,7 @@ const foods = [
     dishes: [],
   },
   {
-    id: 1043,
+    id: 1044,
     name: '월남쌈(고이꾸온)',
     description: '라이스페이퍼에 각종 채소를 넣어 다양한 소스에 찍어먹자. 보기에도 좋고 맛도 좋다.',
     category: '베트남식',
@@ -360,7 +360,7 @@ const foods = [
     dishes: [],
   },
   {
-    id: 1044,
+    id: 1045,
     name: '분짜',
     description: '쌀국수의 한 종류로 쌀국수면에 숯불에 구운 돼지고기와 야채를 기호대로 넣어서 함께 먹는 음식이다.',
     category: '베트남식',
@@ -368,7 +368,7 @@ const foods = [
     dishes: [],
   },
   {
-    id: 1045,
+    id: 1046,
     name: '퍼 가(닭국수)',
     description: '쌀국수의 한 종류로 닭고기 국물에 말아낸 쌀국수로 토핑된 닭의 쫄깃한 식감을 느낄 수 있다.',
     category: '베트남식',
@@ -376,7 +376,7 @@ const foods = [
     dishes: [],
   },
   {
-    id: 1046,
+    id: 1047,
     name: '껌승(돼지갈비덮밥)',
     description: '돼지갈비를 얹은 덮밥으로 한국인의 입맛에 아주 잘 맞는 베트남 음식이다.',
     category: '베트남식',
@@ -384,7 +384,7 @@ const foods = [
     dishes: [],
   },
   {
-    id: 1047,
+    id: 1048,
     name: '햄버거',
     description: '',
     category: '패스트푸드',
@@ -392,7 +392,7 @@ const foods = [
     dishes: [],
   },
   {
-    id: 1048,
+    id: 1049,
     name: '샌드위치',
     description: '',
     category: '패스트푸드',
@@ -400,7 +400,7 @@ const foods = [
     dishes: [],
   },
   {
-    id: 1049,
+    id: 1050,
     name: '편의점도시락',
     description: '',
     category: '패스트푸드',
@@ -408,7 +408,7 @@ const foods = [
     dishes: [],
   },
   {
-    id: 1050,
+    id: 1051,
     name: '김밥',
     description: '',
     category: '분식',
@@ -416,7 +416,7 @@ const foods = [
     dishes: [],
   },
   {
-    id: 1051,
+    id: 1052,
     name: '라면',
     description: '',
     category: '분식',
@@ -424,7 +424,7 @@ const foods = [
     dishes: [],
   },
   {
-    id: 1052,
+    id: 1053,
     name: '우동',
     description: '',
     category: '분식',
@@ -432,7 +432,7 @@ const foods = [
     dishes: [],
   },
   {
-    id: 1053,
+    id: 1054,
     name: '쫄면',
     description: '',
     category: '분식',
@@ -440,7 +440,7 @@ const foods = [
     dishes: [],
   },
   {
-    id: 1054,
+    id: 1055,
     name: '떡볶이',
     description: '',
     category: '분식',
@@ -448,7 +448,7 @@ const foods = [
     dishes: [],
   },
   {
-    id: 1055,
+    id: 1056,
     name: '순대',
     description: '',
     category: '분식',
