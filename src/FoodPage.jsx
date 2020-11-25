@@ -13,8 +13,8 @@ export default function FoodPage() {
   const foods = useSelector(get('foods'));
 
   function handleClick() {
-    const foodId = getRandomNumber(foods.length);
-    const selectedFood = foods.find((foodItem) => foodItem.id === foodId);
+    const index = getRandomNumber(foods.length);
+    const selectedFood = foods.find((foodItem) => foodItem.id === foods[index].id);
 
     dispatch(setFood(selectedFood));
   }
