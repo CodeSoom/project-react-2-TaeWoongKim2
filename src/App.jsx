@@ -14,7 +14,7 @@ import HomePage from './HomePage';
 
 import FoodPage from './FoodPage';
 
-import FoodListPage from './FoodListPage';
+import MenusPage from './MenusPage';
 
 import { loadFoodData } from './slice';
 
@@ -72,7 +72,7 @@ export default function App() {
             <Switch>
               <Route exact path="/" component={HomePage} />
               <Route exact path="/food" component={FoodPage} />
-              <Route exact path="/foods" component={FoodListPage} />
+              <Route exact path="/foods" component={MenusPage} />
             </Switch>
           </AppContent>
           <AppFooter />

@@ -4,16 +4,16 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { render } from '@testing-library/react';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-import FoodListPage from './FoodListPage';
+import MenusPage from './MenusPage';
 
-import FOODS from '../fixtures/foods';
+import MENUS from '../fixtures/foods';
 
-
-const mockPush = jest.fn();
 
 jest.mock('react-redux');
+
+const mockPush = jest.fn();
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -22,23 +22,17 @@ jest.mock('react-router-dom', () => ({
   },
 }));
 
-describe('FoodListPage', () => {
-  const dispatch = jest.fn();
-
+describe('MenusPage', () => {
   beforeEach(() => {
-    dispatch.mockClear();
-
-    useDispatch.mockImplementation(() => dispatch);
-
     useSelector.mockImplementation((selector) => selector({
-      foods: FOODS,
+      foods: MENUS,
     }));
   });
 
   function renderFoodPage() {
     return render((
       <MemoryRouter>
-        <FoodListPage />
+        <MenusPage />
       </MemoryRouter>
     ));
   }
@@ -47,13 +41,5 @@ describe('FoodListPage', () => {
     const { container } = renderFoodPage();
 
     expect(container).toHaveTextContent(/메뉴판/);
-  });
-
-  it('renders menu list', () => {
-    const { container } = renderFoodPage();
-
-    FOODS.forEach((menu) => {
-      expect(container).toHaveTextContent(menu.name);
-    });
   });
 });
