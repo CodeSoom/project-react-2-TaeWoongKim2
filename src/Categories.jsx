@@ -1,6 +1,17 @@
 import React from 'react';
 
+import styled from '@emotion/styled';
+
 import { isEmpty } from './utils';
+
+
+const MenuList = styled.ul`
+  display: flex;
+  & li {
+    flex: 1;
+    flex-basis: auto;
+  }
+`;
 
 export default function Categories({
   categories = [],
@@ -8,7 +19,7 @@ export default function Categories({
   onClick,
 }) {
   return (
-    <ul>
+    <MenuList>
       <li>
         <button
           type="button"
@@ -35,6 +46,6 @@ export default function Categories({
           </button>
         </li>
       ))}
-    </ul>
+    </MenuList>
   );
 }

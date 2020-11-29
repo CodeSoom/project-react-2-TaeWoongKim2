@@ -66,14 +66,13 @@ const MenuButtons = styled.div`
   & > button {
     height: 32px;
     line-height: 32px;
-    color: #fff;
-    background: #fff0;
-    border: 1px solid #fff;
+    color: #040404;
+    background: #ffffffa6;
+    border: 1px solid #000;
     cursor: pointer;
     &:hover {
-      color: #333;
       background: #fff;
-      border: 1px solid #333;  
+      border: 1px solid #333;
     };
   }
 `;

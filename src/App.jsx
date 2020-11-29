@@ -19,6 +19,7 @@ import MenusPage from './MenusPage';
 import { loadCategoryData, loadFoodData } from './slice';
 
 const GridLayout = styled.div`
+  height: 100%;
   display: grid;
   grid-template-areas: 
     "nav-l header nav-r"
@@ -26,14 +27,12 @@ const GridLayout = styled.div`
     "nav-l footer nav-r";
   grid-template-rows: 80px 1fr 100px;  
   grid-template-columns: 20% 1fr 20%;
-  grid-row-gap: 10px;
-  grid-column-gap: 10px;
-  height: 100vh;
   margin: 0;
   color: #eee;
   background-image: url(./public/images/bg1_8x.jpg);
   background-position: center;
   background-size: cover;
+  overflow-y: auto;
   & > header, footer, article, nav, div {
     padding: 1.2em;
     background: fff0;
@@ -73,6 +72,7 @@ const AppRightNavigator = styled.nav`
 
 const AppArticle = styled.article`
   grid-area: article;
+  background-color: #ffffff0f;
 `;
 
 export default function App() {
