@@ -8,18 +8,18 @@ export default function Menus({ menus = [], checkedCategories = [] }) {
   }
 
   return (
-    <ul>
+    <>
       {menus.map(({ id, name, category }) => {
         if (isEmpty(checkedCategories)
           || checkedCategories.find((checkedCategory) => (checkedCategory.category === category))) {
           return (
-            <li key={id}>
+            <span key={id}>
               {name}
-            </li>
+            </span>
           );
         }
         return null;
       })}
-    </ul>
+    </>
   );
 }
