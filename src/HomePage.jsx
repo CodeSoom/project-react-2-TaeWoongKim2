@@ -21,11 +21,11 @@ export default function HomePage() {
 
     dispatch(setFood(selectedFood));
 
-    history.push('/food');
+    history.push('/menu');
   }
 
   function handleMenuListClick() {
-    history.push('/foods');
+    history.push('/menus');
   }
 
   return (

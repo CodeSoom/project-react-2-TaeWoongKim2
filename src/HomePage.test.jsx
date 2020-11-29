@@ -56,6 +56,6 @@ describe('HomePage', () => {
 
     fireEvent.click(button);
 
-    expect(mockPush).toBeCalledWith('/food');
+    expect(mockPush).toBeCalledWith('/menu');
   });
 });

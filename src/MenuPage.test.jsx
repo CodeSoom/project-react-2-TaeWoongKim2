@@ -6,7 +6,7 @@ import { render } from '@testing-library/react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import FoodPage from './FoodPage';
+import MenuPage from './MenuPage';
 
 import FOODS from '../fixtures/foods';
 
@@ -22,7 +22,7 @@ jest.mock('react-router-dom', () => ({
   },
 }));
 
-describe('FoodPage', () => {
+describe('MenuPage', () => {
   const dispatch = jest.fn();
 
   beforeEach(() => {
@@ -39,7 +39,7 @@ describe('FoodPage', () => {
   function renderFoodPage() {
     return render((
       <MemoryRouter>
-        <FoodPage />
+        <MenuPage />
       </MemoryRouter>
     ));
   }

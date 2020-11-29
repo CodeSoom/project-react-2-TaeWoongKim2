@@ -1,19 +1,25 @@
 import React from 'react';
 
-const isEmpty = (array) => array.length === 0;
+import { isEmpty } from './utils';
 
-export default function Menus({ menus = [] }) {
+export default function Menus({ menus = [], checkedCategories = [] }) {
   if (!menus || isEmpty(menus)) {
     return <p>등록된 메뉴가 없습니다!</p>;
   }
 
   return (
     <ul>
-      {menus.map((food) => (
-        <li key={food.id}>
-          {food.name}
-        </li>
-      ))}
+      {menus.map(({ id, name, category }) => {
+        if (isEmpty(checkedCategories)
+          || checkedCategories.find((checkedCategory) => (checkedCategory.category === category))) {
+          return (
+            <li key={id}>
+              {name}
+            </li>
+          );
+        }
+        return null;
+      })}
     </ul>
   );
 }
