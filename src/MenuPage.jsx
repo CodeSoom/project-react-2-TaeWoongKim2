@@ -16,6 +16,67 @@ const MenuSection = styled.section`
   justify-content: center;
 `;
 
+const MenuGrid = styled.div`
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-areas: 
+      "pick dish"
+      "share share";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 80px;
+  @media all and (max-width: 767px) {
+    grid-template-areas: 
+      "pick"
+      "share"
+      "dish";
+    grid-template-columns: 1fr 80px 1fr;
+    grid-template-rows: none;
+    grid-template-columns: none;
+  }
+`;
+
+const MenuPick = styled.div`
+  grid-area: pick;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  & > h3 {
+    margin: 0 0 10px;
+    font-size: 24px;
+  }
+  & > hr {
+    margin: 0;
+    border: 0;
+    border-top: 2px solid #eee;
+    width: 90%;
+  }
+  & > p {
+    margin: 1em 0 0 0;
+  }
+`;
+
+const MenuDishes = styled.div`
+  grid-area: dish;
+`;
+
+const MenuButtons = styled.div`
+  grid-area: share;
+  text-align: center;
+  & > button {
+    height: 32px;
+    line-height: 32px;
+    color: #fff;
+    background: #fff0;
+    border: 1px solid #fff;
+    cursor: pointer;
+    &:hover {
+      color: #333;
+      background: #fff;
+      border: 1px solid #333;  
+    };
+  }
+`;
 
 export default function MenuPage() {
   const dispatch = useDispatch();
@@ -40,18 +101,23 @@ export default function MenuPage() {
 
   return (
     <MenuSection>
-      <h1>{food.name}</h1>
-      <p>
-        {food.name}
-        {' '}
-        어때?
-      </p>
-      <p>
-        {food.name}
-        {' '}
-        소개하는 글!
-      </p>
-      <button type="button" onClick={handleClick}>다시 뽑기</button>
+      <MenuGrid>
+        <MenuPick>
+          <h3>{food.name}</h3>
+          <hr />
+          <p>
+            오늘
+            {' '}
+            {food.name}
+            {' '}
+            각 이다!
+          </p>
+        </MenuPick>
+        <MenuDishes />
+        <MenuButtons>
+          <button type="button" onClick={handleClick}>다시 뽑기</button>
+        </MenuButtons>
+      </MenuGrid>
     </MenuSection>
   );
 }
