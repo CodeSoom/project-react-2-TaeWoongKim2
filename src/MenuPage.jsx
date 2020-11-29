@@ -2,9 +2,20 @@ import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
+import styled from '@emotion/styled';
+
 import { setFood } from './slice';
 
 import { get, getRandomNumber } from './utils';
+
+
+const MenuSection = styled.section`
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 
 export default function MenuPage() {
   const dispatch = useDispatch();
@@ -21,12 +32,14 @@ export default function MenuPage() {
 
   if (!food) {
     return (
-      <p>정성껏 메뉴 선정 중...</p>
+      <MenuSection>
+        <p>정성껏 메뉴 선정 중...</p>
+      </MenuSection>
     );
   }
 
   return (
-    <>
+    <MenuSection>
       <h1>{food.name}</h1>
       <p>
         {food.name}
@@ -39,6 +52,6 @@ export default function MenuPage() {
         소개하는 글!
       </p>
       <button type="button" onClick={handleClick}>다시 뽑기</button>
-    </>
+    </MenuSection>
   );
 }
