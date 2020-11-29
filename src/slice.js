@@ -1,12 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { fetchFoods } from './services/api';
+import { fetchFoods, fetchCategories } from './services/api';
 
 const { actions, reducer } = createSlice({
   name: 'application',
   initialState: {
     food: null,
     foods: [],
+    categories: [],
+    checkedCategories: [],
   },
   reducers: {
     setFood(state, { payload: food }) {
@@ -21,10 +23,45 @@ const { actions, reducer } = createSlice({
         foods,
       };
     },
+    setCategories(state, { payload: categories }) {
+      return {
+        ...state,
+        categories,
+      };
+    },
+    setCheckedCategories(state, { payload: newCheckedCategory }) {
+      const { checkedCategories } = state;
+      const isExistIndex = checkedCategories.findIndex(({ id }) => (id === newCheckedCategory.id));
+      if (isExistIndex >= 0) {
+        const copyCheckedCategories = [...checkedCategories];
+        copyCheckedCategories.splice(isExistIndex, 1);
+        return {
+          ...state,
+          checkedCategories: copyCheckedCategories,
+        };
+      }
+
+      return {
+        ...state,
+        checkedCategories: [...checkedCategories, newCheckedCategory],
+      };
+    },
+    clearCheckedCategories(state) {
+      return {
+        ...state,
+        checkedCategories: [],
+      };
+    },
   },
 });
 
-export const { setFood, setFoods } = actions;
+export const {
+  setFood,
+  setFoods,
+  setCategories,
+  setCheckedCategories,
+  clearCheckedCategories,
+} = actions;
 
 export function loadFoodData() {
   return async (dispatch) => {
@@ -36,5 +73,14 @@ export function loadFoodData() {
   };
 }
 
+export function loadCategoryData() {
+  return async (dispatch) => {
+    dispatch(setCategories([]));
+
+    const categories = await fetchCategories();
+
+    dispatch(setCategories(categories));
+  };
+}
 
 export default reducer;

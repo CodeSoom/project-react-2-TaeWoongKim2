@@ -6,7 +6,7 @@ import { setFood } from './slice';
 
 import { get, getRandomNumber } from './utils';
 
-export default function FoodPage() {
+export default function MenuPage() {
   const dispatch = useDispatch();
 
   const food = useSelector(get('food'));

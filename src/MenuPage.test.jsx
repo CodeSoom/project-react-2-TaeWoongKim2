@@ -6,7 +6,7 @@ import { render } from '@testing-library/react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import FoodListPage from './FoodListPage';
+import MenuPage from './MenuPage';
 
 import FOODS from '../fixtures/foods';
 
@@ -22,7 +22,7 @@ jest.mock('react-router-dom', () => ({
   },
 }));
 
-describe('FoodListPage', () => {
+describe('MenuPage', () => {
   const dispatch = jest.fn();
 
   beforeEach(() => {
@@ -31,6 +31,7 @@ describe('FoodListPage', () => {
     useDispatch.mockImplementation(() => dispatch);
 
     useSelector.mockImplementation((selector) => selector({
+      food: FOODS[0],
       foods: FOODS,
     }));
   });
@@ -38,22 +39,16 @@ describe('FoodListPage', () => {
   function renderFoodPage() {
     return render((
       <MemoryRouter>
-        <FoodListPage />
+        <MenuPage />
       </MemoryRouter>
     ));
   }
 
-  it('renders title called "menu board"', () => {
+  it('renders food name and description', () => {
     const { container } = renderFoodPage();
 
-    expect(container).toHaveTextContent(/메뉴판/);
-  });
+    expect(container).toHaveTextContent(FOODS[0].name);
 
-  it('renders menu list', () => {
-    const { container } = renderFoodPage();
-
-    FOODS.forEach((menu) => {
-      expect(container).toHaveTextContent(menu.name);
-    });
+    expect(container).toHaveTextContent(`${FOODS[0].name} 어때?`);
   });
 });

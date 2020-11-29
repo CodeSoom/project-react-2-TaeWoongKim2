@@ -6,9 +6,9 @@ import { render } from '@testing-library/react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import FoodPage from './FoodPage';
+import CategoriesContainer from './CategoriesContainer';
 
-import FOODS from '../fixtures/foods';
+import CATEGORIES from '../fixtures/categories';
 
 
 const mockPush = jest.fn();
@@ -22,7 +22,7 @@ jest.mock('react-router-dom', () => ({
   },
 }));
 
-describe('FoodPage', () => {
+describe('CategoriesContainer', () => {
   const dispatch = jest.fn();
 
   beforeEach(() => {
@@ -31,24 +31,20 @@ describe('FoodPage', () => {
     useDispatch.mockImplementation(() => dispatch);
 
     useSelector.mockImplementation((selector) => selector({
-      food: FOODS[0],
-      foods: FOODS,
+      categories: CATEGORIES,
+      checkedCategories: [],
     }));
   });
 
-  function renderFoodPage() {
+  function renderCategoriesContainer() {
     return render((
       <MemoryRouter>
-        <FoodPage />
+        <CategoriesContainer />
       </MemoryRouter>
     ));
   }
 
-  it('renders food name and description', () => {
-    const { container } = renderFoodPage();
-
-    expect(container).toHaveTextContent(FOODS[0].name);
-
-    expect(container).toHaveTextContent(`${FOODS[0].name} 어때?`);
+  it('renders CategoriesContainer', () => {
+    renderCategoriesContainer();
   });
 });

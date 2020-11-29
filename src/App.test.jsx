@@ -21,6 +21,7 @@ describe('App', () => {
     useSelector.mockImplementation((selector) => selector({
       food: null,
       foods: [],
+      categories: [],
     }));
   });
 
@@ -32,9 +33,21 @@ describe('App', () => {
     ));
   }
 
-  it('renders header', () => {
+  it('renders title of home page', () => {
     const { container } = renderApp({ path: '/' });
 
     expect(container).toHaveTextContent(/오늘 뭐 먹지/);
+  });
+
+  it('renders header of menu page', () => {
+    const { container } = renderApp({ path: '/menu' });
+
+    expect(container).toHaveTextContent(/오늘 뭐 먹지/);
+  });
+
+  it('renders title of menus page', () => {
+    const { container } = renderApp({ path: '/menus' });
+
+    expect(container).toHaveTextContent(/메뉴판/);
   });
 });

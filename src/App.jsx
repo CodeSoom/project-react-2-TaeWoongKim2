@@ -12,11 +12,11 @@ import styled from '@emotion/styled';
 
 import HomePage from './HomePage';
 
-import FoodPage from './FoodPage';
+import MenuPage from './MenuPage';
 
-import FoodListPage from './FoodListPage';
+import MenusPage from './MenusPage';
 
-import { loadFoodData } from './slice';
+import { loadCategoryData, loadFoodData } from './slice';
 
 const GridLayout = styled.div({
   display: 'grid',
@@ -56,6 +56,7 @@ export default function App() {
 
   useEffect(() => {
     dispatch(loadFoodData());
+    dispatch(loadCategoryData());
   });
 
   return (
@@ -71,8 +72,8 @@ export default function App() {
           <AppContent>
             <Switch>
               <Route exact path="/" component={HomePage} />
-              <Route exact path="/food" component={FoodPage} />
-              <Route exact path="/foods" component={FoodListPage} />
+              <Route exact path="/menu" component={MenuPage} />
+              <Route exact path="/menus" component={MenusPage} />
             </Switch>
           </AppContent>
           <AppFooter />

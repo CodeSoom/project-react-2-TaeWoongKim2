@@ -1,0 +1,44 @@
+import React from 'react';
+
+import { isEmpty } from './utils';
+
+export default function Categories({
+  categories = [],
+  checkedCategories = [],
+  onClick,
+}) {
+  const isShowAll = isEmpty(checkedCategories);
+
+  return (
+    <ul>
+      <li
+        active={checkedCategories && isEmpty(checkedCategories)}
+      >
+        <input type="checkbox" id="categoryAll" name="categoryAll" value="all" defaultChecked={isShowAll} />
+        <label htmlFor="categoryAll">전체</label>
+        <button
+          type="button"
+          onClick={() => onClick(null)}
+        >
+          전체
+        </button>
+      </li>
+      {categories.map(({ id, category }) => (
+        <li
+          key={id}
+          active={checkedCategories && checkedCategories.includes(id)}
+        >
+          <input type="checkbox" id={`category${id}`} name={`category${id}`} value={id} />
+          <label htmlFor={`category${id}`}>{category}</label>
+
+          <button
+            type="button"
+            onClick={() => onClick({ id, category })}
+          >
+            {category}
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
+}
