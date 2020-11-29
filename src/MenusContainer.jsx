@@ -9,8 +9,14 @@ import { get } from './utils';
 
 export default function MenusContainer() {
   const menus = useSelector(get('foods'));
+  const checkedCategories = useSelector(get('checkedCategories'));
 
   return (
-    <Menus menus={menus} />
+    <>
+      <Menus
+        menus={menus}
+        checkedCategories={checkedCategories}
+      />
+    </>
   );
 }

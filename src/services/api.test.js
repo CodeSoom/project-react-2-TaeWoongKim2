@@ -1,6 +1,7 @@
-import { fetchFoods } from './api';
+import { fetchFoods, fetchCategories } from './api';
 
 import FOODS from '../../fixtures/foods';
+import CATEGORIES from '../../fixtures/categories';
 
 describe('api', () => {
   const mockFetch = (data) => {
@@ -14,10 +15,22 @@ describe('api', () => {
       mockFetch(FOODS);
     });
 
-    it('returns regions', async () => {
+    it('returns foods', async () => {
       const foodList = await fetchFoods();
 
       expect(foodList).toEqual(FOODS);
+    });
+  });
+
+  describe('fetchCategories', () => {
+    beforeEach(() => {
+      mockFetch(CATEGORIES);
+    });
+
+    it('returns categories', async () => {
+      const categories = await fetchCategories();
+
+      expect(categories).toEqual(CATEGORIES);
     });
   });
 });

@@ -1,4 +1,5 @@
 import foods from '../../fixtures/foods';
+import categories from '../../fixtures/categories';
 
 export async function fetchFoods() {
   // TODO: fecth foods data from JSON Server.
@@ -6,6 +7,8 @@ export async function fetchFoods() {
   return data;
 }
 
-export async function fetchDummy() {
-  // TODO: Delete this!
+export async function fetchCategories() {
+  // TODO: fecth foods data from JSON Server.
+  const data = await categories;
+  return data;
 }
