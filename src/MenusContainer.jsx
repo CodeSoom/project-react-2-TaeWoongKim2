@@ -18,13 +18,13 @@ const MenusWapper = styled.div`
 
 export default function MenusContainer() {
   const menus = useSelector(get('foods')) || [];
-  const checkedCategories = useSelector(get('checkedCategories')) || [];
+  const checkedCategory = useSelector(get('checkedCategory')) || {};
 
   return (
     <MenusWapper>
       <Menus
         menus={menus}
-        checkedCategories={checkedCategories}
+        checkedCategory={checkedCategory}
       />
     </MenusWapper>
   );

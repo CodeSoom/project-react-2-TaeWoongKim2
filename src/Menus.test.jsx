@@ -7,15 +7,14 @@ import { render } from '@testing-library/react';
 import Menus from './Menus';
 
 import FOODS from '../fixtures/foods';
-import CATEGORIES from '../fixtures/categories';
 
 describe('Menus', () => {
-  function renderFoodPage() {
+  function renderFoodPage(checkedCategory) {
     return render((
       <MemoryRouter>
         <Menus
           menus={FOODS}
-          checkedCategories={CATEGORIES}
+          checkedCategory={checkedCategory}
         />
       </MemoryRouter>
     ));

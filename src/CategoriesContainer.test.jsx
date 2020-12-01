@@ -32,7 +32,7 @@ describe('CategoriesContainer', () => {
 
     useSelector.mockImplementation((selector) => selector({
       categories: CATEGORIES,
-      checkedCategories: [],
+      checkedCategory: [],
     }));
   });
 

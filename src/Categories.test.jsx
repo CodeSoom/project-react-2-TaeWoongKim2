@@ -25,12 +25,12 @@ describe('Categories', () => {
     handleClick.mockClear();
   });
 
-  function renderCategories({ categories = [], checkedCategories = [] } = []) {
+  function renderCategories({ categories = [], checkedCategory = {} } = []) {
     return render((
       <MemoryRouter>
         <Categories
           categories={categories}
-          checkedCategories={checkedCategories}
+          checkedCategory={checkedCategory}
           onClick={handleClick}
         />
       </MemoryRouter>
@@ -65,15 +65,13 @@ describe('Categories', () => {
     });
   });
 
-  context('with one or more checked categories', () => {
-    const newCheckedCategory = CATEGORIES[0];
-    const checkedCategories = [newCheckedCategory];
+  context('with checked category', () => {
+    const checkedCategory = CATEGORIES[0];
 
-    it('checks selectbox of selected categories', () => {
-      const { queryByText } = renderCategories({ categories: CATEGORIES, checkedCategories });
+    it('checks selectbox of selected category', () => {
+      const { queryByText } = renderCategories({ categories: CATEGORIES, checkedCategory });
 
-      expect(queryByText('전체(V)')).toBeNull();
-      expect(queryByText(`${newCheckedCategory.category}(V)`)).not.toBeNull();
+      expect(queryByText(`${checkedCategory.category}(V)`)).not.toBeNull();
     });
   });
 });

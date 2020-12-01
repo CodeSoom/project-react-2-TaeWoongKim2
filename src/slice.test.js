@@ -2,8 +2,8 @@ import reducer, {
   setFood,
   setFoods,
   setCategories,
-  setCheckedCategories,
-  clearCheckedCategories,
+  setCheckedCategory,
+  clearCheckedCategory,
   changeMenuFields,
 } from './slice';
 
@@ -17,7 +17,7 @@ describe('reducer', () => {
       food: null,
       foods: [],
       categories: [],
-      checkedCategories: [],
+      checkedCategory: {},
       menusFields: {
         menuName: '',
       },
@@ -68,29 +68,29 @@ describe('reducer', () => {
     });
   });
 
-  describe('setCheckedCategories', () => {
-    it('add a new checked category at "checkCategories"', () => {
+  describe('setCheckedCategory', () => {
+    it('add a new checked category at "checkCategory"', () => {
       const initialState = {
-        checkedCategories: [],
+        checkedCategory: {},
       };
 
-      const newCheckedCategory = CATEGORIES[0];
-      const state = reducer(initialState, setCheckedCategories(newCheckedCategory));
+      const checkedCategory = CATEGORIES[0];
+      const state = reducer(initialState, setCheckedCategory(checkedCategory));
 
-      expect(state.checkedCategories).toHaveLength(1);
-      expect(state.checkedCategories).toContain(newCheckedCategory);
+      expect(state.checkedCategory).toBe(checkedCategory);
     });
   });
 
-  describe('clearCheckedCategories', () => {
-    it('clear state named "checkCategories"', () => {
+  describe('clearCheckedCategory', () => {
+    it('clear state named "checkCategory"', () => {
       const initialState = {
-        checkedCategories: CATEGORIES,
+        checkedCategory: CATEGORIES[0],
       };
 
-      const state = reducer(initialState, clearCheckedCategories());
+      const state = reducer(initialState, clearCheckedCategory());
 
-      expect(state.checkedCategories).toHaveLength(0);
+      expect(state.checkedCategory.id).toBeUndefined();
+      expect(state.checkedCategory.category).toBeUndefined();
     });
   });
 

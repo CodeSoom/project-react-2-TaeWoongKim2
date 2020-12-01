@@ -8,7 +8,7 @@ const { actions, reducer } = createSlice({
     food: null,
     foods: [],
     categories: [],
-    checkedCategories: [],
+    checkedCategory: {},
     menusFields: {
       menuName: '',
     },
@@ -32,27 +32,16 @@ const { actions, reducer } = createSlice({
         categories,
       };
     },
-    setCheckedCategories(state, { payload: newCheckedCategory }) {
-      const { checkedCategories } = state;
-      const isExistIndex = checkedCategories.findIndex(({ id }) => (id === newCheckedCategory.id));
-      if (isExistIndex >= 0) {
-        const copyCheckedCategories = [...checkedCategories];
-        copyCheckedCategories.splice(isExistIndex, 1);
-        return {
-          ...state,
-          checkedCategories: copyCheckedCategories,
-        };
-      }
-
+    setCheckedCategory(state, { payload: checkedCategory }) {
       return {
         ...state,
-        checkedCategories: [...checkedCategories, newCheckedCategory],
+        checkedCategory,
       };
     },
-    clearCheckedCategories(state) {
+    clearCheckedCategory(state) {
       return {
         ...state,
-        checkedCategories: [],
+        checkedCategory: {},
       };
     },
     changeMenuFields(state, { payload: { name, value } }) {
@@ -71,8 +60,8 @@ export const {
   setFood,
   setFoods,
   setCategories,
-  setCheckedCategories,
-  clearCheckedCategories,
+  setCheckedCategory,
+  clearCheckedCategory,
   changeMenuFields,
 } = actions;
 

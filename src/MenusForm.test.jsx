@@ -31,7 +31,7 @@ describe('MenusForm', () => {
 
     fireEvent.change(input, { target: { value: '백반' } });
 
-    expect(handleChange).toBeCalledWith({ name: 'name', value: '백반' });
+    expect(handleChange).toBeCalledWith({ name: 'menuName', value: '백반' });
   });
 
   it('renders button and search menu name', () => {

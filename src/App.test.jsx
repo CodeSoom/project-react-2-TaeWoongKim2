@@ -22,7 +22,7 @@ describe('App', () => {
       food: null,
       foods: [],
       categories: [],
-      checkedCategories: [],
+      checkedCategory: [],
       menusFields: {
         name: '',
       },
