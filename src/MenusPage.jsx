@@ -3,6 +3,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import MenusContainer from './MenusContainer';
+import MenusFormContainer from './MenusFormContainer';
 import CategoriesContainer from './CategoriesContainer';
 
 
@@ -39,19 +40,9 @@ export default function MenusPage() {
         <span className="highlight">먹고싶은 메뉴</span>
         를 확인해보세요!
       </MenusTitle>
+      <MenusFormContainer />
       <CategoriesContainer />
       <MenusContainer />
     </MenusSection>
   );
 }
-
-// function FormContainer() {
-//   return (
-//     <form>
-//       <input type="text" name="" id="" />
-//       <button type="button">
-//         <span role="img" aria-label="search">🔍</span>
-//       </button>
-//     </form>
-//   );
-// }

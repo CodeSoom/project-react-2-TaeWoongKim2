@@ -4,11 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { render } from '@testing-library/react';
 
-import { useSelector } from 'react-redux';
-
 import MenusPage from './MenusPage';
-
-import MENUS from '../fixtures/foods';
 
 
 jest.mock('react-redux');
@@ -23,12 +19,6 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('MenusPage', () => {
-  beforeEach(() => {
-    useSelector.mockImplementation((selector) => selector({
-      foods: MENUS,
-    }));
-  });
-
   function renderFoodPage() {
     return render((
       <MemoryRouter>
@@ -37,9 +27,15 @@ describe('MenusPage', () => {
     ));
   }
 
-  it('renders title called "menu board"', () => {
+  it('renders title of "MenusPage"', () => {
     const { container } = renderFoodPage();
 
     expect(container).toHaveTextContent(/메뉴판/);
+  });
+
+  it('renders sub-title of "MenusPage"', () => {
+    const { container } = renderFoodPage();
+
+    expect(container).toHaveTextContent(/먹고싶은 메뉴를 확인해보세요/);
   });
 });

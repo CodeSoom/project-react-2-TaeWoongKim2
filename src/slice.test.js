@@ -4,6 +4,7 @@ import reducer, {
   setCategories,
   setCheckedCategories,
   clearCheckedCategories,
+  changeMenuFields,
 } from './slice';
 
 import FOODS from '../fixtures/foods';
@@ -17,6 +18,9 @@ describe('reducer', () => {
       foods: [],
       categories: [],
       checkedCategories: [],
+      menusFields: {
+        menuName: '',
+      },
     };
 
     it('returns initialState', () => {
@@ -87,6 +91,22 @@ describe('reducer', () => {
       const state = reducer(initialState, clearCheckedCategories());
 
       expect(state.checkedCategories).toHaveLength(0);
+    });
+  });
+
+  describe('changeMenuFields', () => {
+    it('change menuName in menusFields', () => {
+      const initialState = {
+        menusFields: {
+          menuName: '',
+        },
+      };
+
+      const state = reducer(initialState, changeMenuFields(
+        { name: 'menuName', value: '메뉴가 뭐가 있을까요?' },
+      ));
+
+      expect(state.menusFields.menuName).toBe('메뉴가 뭐가 있을까요?');
     });
   });
 });

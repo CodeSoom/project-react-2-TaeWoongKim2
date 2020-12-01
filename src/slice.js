@@ -9,6 +9,9 @@ const { actions, reducer } = createSlice({
     foods: [],
     categories: [],
     checkedCategories: [],
+    menusFields: {
+      menuName: '',
+    },
   },
   reducers: {
     setFood(state, { payload: food }) {
@@ -52,6 +55,15 @@ const { actions, reducer } = createSlice({
         checkedCategories: [],
       };
     },
+    changeMenuFields(state, { payload: { name, value } }) {
+      return {
+        ...state,
+        menusFields: {
+          ...state.menusFields,
+          [name]: value,
+        },
+      };
+    },
   },
 });
 
@@ -61,6 +73,7 @@ export const {
   setCategories,
   setCheckedCategories,
   clearCheckedCategories,
+  changeMenuFields,
 } = actions;
 
 export function loadFoodData() {
