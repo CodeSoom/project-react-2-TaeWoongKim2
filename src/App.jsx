@@ -29,7 +29,7 @@ const GridLayout = styled.div`
   grid-template-columns: 20% 1fr 20%;
   margin: 0;
   color: #eee;
-  background-image: url(./public/images/bg1_8x.jpg);
+  background-image: url(public/images/bg1_8x.jpg);
   background-position: center;
   background-size: cover;
   overflow-y: auto;
