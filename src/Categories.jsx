@@ -15,7 +15,7 @@ const MenuList = styled.ul`
 
 export default function Categories({
   categories = [],
-  checkedCategories = [],
+  checkedCategory = {},
   onClick,
 }) {
   return (
@@ -26,7 +26,7 @@ export default function Categories({
           onClick={() => onClick()}
         >
           전체
-          {isEmpty(checkedCategories) ? (
+          {isEmpty(Object.keys(checkedCategory)) ? (
             '(V)'
           ) : null}
         </button>
@@ -40,7 +40,7 @@ export default function Categories({
             onClick={() => onClick({ id, category })}
           >
             {category}
-            {checkedCategories.find((checkedCategoriy) => (checkedCategoriy.id === id)) ? (
+            {(id === checkedCategory.id) ? (
               '(V)'
             ) : null}
           </button>
