@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { render } from '@testing-library/react';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import MenusContainer from './MenusContainer';
 
@@ -23,31 +23,23 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('MenusContainer', () => {
-  const dispatch = jest.fn();
-
   beforeEach(() => {
-    dispatch.mockClear();
-
-    useDispatch.mockImplementation(() => dispatch);
-
     useSelector.mockImplementation((selector) => selector({
       foods: FOODS,
+      checkedCategory: {},
+      menusFields: { menuName: '' },
     }));
   });
 
-  function renderFoodPage() {
-    return render((
+  it('renders menu list', () => {
+    const { container } = render((
       <MemoryRouter>
         <MenusContainer />
       </MemoryRouter>
     ));
-  }
 
-  it('renders menu list', () => {
-    const { container } = renderFoodPage();
-
-    FOODS.forEach((menu) => {
-      expect(container).toHaveTextContent(menu.name);
+    FOODS.forEach(({ name }) => {
+      expect(container).toHaveTextContent(name);
     });
   });
 });
