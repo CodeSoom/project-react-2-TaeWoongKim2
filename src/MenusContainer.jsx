@@ -19,12 +19,14 @@ const MenusWapper = styled.div`
 export default function MenusContainer() {
   const menus = useSelector(get('foods')) || [];
   const checkedCategory = useSelector(get('checkedCategory')) || {};
+  const { menuName } = useSelector(get('menusFields')) || { menuName: '' };
 
   return (
     <MenusWapper>
       <Menus
         menus={menus}
         checkedCategory={checkedCategory}
+        searchedMenu={menuName}
       />
     </MenusWapper>
   );

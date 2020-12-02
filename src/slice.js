@@ -36,12 +36,20 @@ const { actions, reducer } = createSlice({
       return {
         ...state,
         checkedCategory,
+        menusFields: {
+          ...state.menusFields,
+          menuName: '',
+        },
       };
     },
     clearCheckedCategory(state) {
       return {
         ...state,
         checkedCategory: {},
+        menusFields: {
+          ...state.menusFields,
+          menuName: '',
+        },
       };
     },
     changeMenuFields(state, { payload: { name, value } }) {
