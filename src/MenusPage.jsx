@@ -12,7 +12,10 @@ const MenusSection = styled.section`
   padding: 0 1em;
   text-align: center;
   color: #333;
-  background-color: #fefefe;
+  & div {
+    background-color: #fefefe;
+    box-shadow: 2px 1px 5px #000000;
+  }
   & ul {
     padding: 0;
     list-style: none;
@@ -40,8 +43,8 @@ export default function MenusPage() {
         <span className="highlight">먹고싶은 메뉴</span>
         를 확인해보세요!
       </MenusTitle>
-      <MenusFormContainer />
       <CategoriesContainer />
+      <MenusFormContainer />
       <MenusContainer />
     </MenusSection>
   );

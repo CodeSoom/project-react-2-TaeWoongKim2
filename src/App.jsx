@@ -25,8 +25,8 @@ const GridLayout = styled.div`
     "nav-l header nav-r"
     "nav-l article nav-r"
     "nav-l footer nav-r";
-  grid-template-rows: 80px 1fr 100px;  
-  grid-template-columns: 20% 1fr 20%;
+  grid-template-rows: 60px 1fr 100px;  
+  grid-template-columns: 10% 1fr 10%;
   margin: 0;
   color: #eee;
   background-image: url(public/images/bg1_8x.jpg);
@@ -55,6 +55,10 @@ const AppHeader = styled.header`
   grid-area: header;
   & > h3 {
     margin: .2em;
+    & > a {
+      color: #fff;
+      text-decoration: none;
+    }
   }
 `;
 

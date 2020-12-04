@@ -49,7 +49,7 @@ const HomeContent = styled.div`
     background: #fff0;
     margin: 1em 0 0;
     &:hover {
-      background: #428BCA;
+      background: #6b8754;
       cursor: pointer;
     };
   };
