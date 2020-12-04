@@ -14,6 +14,11 @@ const MenusWapper = styled.div`
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   grid-auto-rows: 180px 180px;
+  @media all and (max-width: 767px) {
+    grid-gap: .8rem;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-auto-rows: 120px 120px;
+  }
 `;
 
 export default function MenusContainer() {

@@ -33,15 +33,4 @@ describe('MenusForm', () => {
 
     expect(handleChange).toBeCalledWith({ name: 'menuName', value: '백반' });
   });
-
-  it('renders button and search menu name', () => {
-    const { getByRole } = renderMenusForm();
-
-    const imageIconButton = getByRole('img');
-    expect(imageIconButton).not.toBeNull();
-
-    fireEvent.click(imageIconButton);
-
-    expect(handleClick).toBeCalled();
-  });
 });

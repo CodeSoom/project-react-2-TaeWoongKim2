@@ -61,7 +61,7 @@ describe('Categories', () => {
     it('checks selectbox of "전체"', () => {
       const { getByText } = renderCategories();
 
-      expect(getByText('전체(V)')).not.toBeNull();
+      expect(getByText('전체')).not.toBeNull();
     });
   });
 
@@ -71,7 +71,7 @@ describe('Categories', () => {
     it('checks selectbox of selected category', () => {
       const { queryByText } = renderCategories({ categories: CATEGORIES, checkedCategory });
 
-      expect(queryByText(`${checkedCategory.category}(V)`)).not.toBeNull();
+      expect(queryByText(`${checkedCategory.category}`)).not.toBeNull();
     });
   });
 });
