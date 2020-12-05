@@ -10,13 +10,11 @@ import { useDispatch } from 'react-redux';
 
 import styled from '@emotion/styled';
 
-import HomePage from './HomePage';
+import HomePage from 'domain/HomePage';
+import MenuPage from 'domain/menu/MenuPage';
+import MenusPage from 'domain/menus/MenusPage';
 
-import MenuPage from './MenuPage';
-
-import MenusPage from './MenusPage';
-
-import { loadCategoryData, loadFoodData } from './slice';
+import { loadCategoryData, loadFoodData } from 'slice';
 
 const GridLayout = styled.div`
   height: 100%;

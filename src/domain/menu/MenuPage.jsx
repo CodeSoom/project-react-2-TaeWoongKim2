@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import styled from '@emotion/styled';
 
-import { setFood } from './slice';
+import { get, getRandomNumber } from 'utils/common';
 
-import { get, getRandomNumber } from './utils';
+import { setFood } from 'slice';
 
 
 const MenuSection = styled.section`

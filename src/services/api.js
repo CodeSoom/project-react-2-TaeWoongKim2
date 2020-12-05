@@ -1,5 +1,5 @@
-import foods from '../../fixtures/foods';
-import categories from '../../fixtures/categories';
+import foods from '__fixtures__/foods';
+import categories from '__fixtures__/categories';
 
 export async function fetchFoods() {
   // TODO: fecth foods data from JSON Server.

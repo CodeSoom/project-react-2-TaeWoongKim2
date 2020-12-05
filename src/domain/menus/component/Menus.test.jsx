@@ -4,10 +4,10 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { render } from '@testing-library/react';
 
-import Menus from './Menus';
+import FOODS from '__fixtures__/foods';
+import CATEGORIES from '__fixtures__/categories';
 
-import FOODS from '../fixtures/foods';
-import CATEGORIES from '../fixtures/categories';
+import Menus from './Menus';
 
 describe('Menus', () => {
   function renderMenus(checkedCategory, searchedMenu) {

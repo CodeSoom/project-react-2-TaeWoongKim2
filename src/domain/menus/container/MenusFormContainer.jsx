@@ -2,13 +2,13 @@ import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
+import { changeMenuFields } from 'slice';
+
+import { get } from 'utils/common';
+
 import styled from '@emotion/styled';
 
-import MenusForm from './MenusForm';
-
-import { changeMenuFields } from './slice';
-
-import { get } from './utils';
+import MenusForm from '../component/MenusForm';
 
 
 const MenusFormWapper = styled.div`

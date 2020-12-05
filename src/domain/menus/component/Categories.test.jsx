@@ -4,9 +4,9 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { render } from '@testing-library/react';
 
-import Categories from './Categories';
+import CATEGORIES from '__fixtures__/categories';
 
-import CATEGORIES from '../fixtures/categories';
+import Categories from './Categories';
 
 
 const mockPush = jest.fn();
