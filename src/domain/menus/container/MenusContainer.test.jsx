@@ -6,9 +6,9 @@ import { render } from '@testing-library/react';
 
 import { useSelector } from 'react-redux';
 
-import MenusContainer from './MenusContainer';
+import FOODS from '__fixtures__/foods';
 
-import FOODS from '../fixtures/foods';
+import MenusContainer from './MenusContainer';
 
 
 const mockPush = jest.fn();

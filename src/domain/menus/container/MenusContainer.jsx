@@ -4,9 +4,9 @@ import { useSelector } from 'react-redux';
 
 import styled from '@emotion/styled';
 
-import Menus from './Menus';
+import { get } from 'utils/common';
 
-import { get } from './utils';
+import Menus from '../component/Menus';
 
 
 const MenusWapper = styled.div`

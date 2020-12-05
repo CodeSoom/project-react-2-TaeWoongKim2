@@ -4,9 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { render, fireEvent } from '@testing-library/react';
 
+import FOODS from '__fixtures__/foods';
 import HomePage from './HomePage';
-
-import FOODS from '../fixtures/foods';
 
 
 const mockPush = jest.fn();

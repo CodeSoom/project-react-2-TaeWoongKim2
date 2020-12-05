@@ -2,9 +2,9 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 
-import MenusContainer from './MenusContainer';
-import MenusFormContainer from './MenusFormContainer';
-import CategoriesContainer from './CategoriesContainer';
+import MenusContainer from './container/MenusContainer';
+import MenusFormContainer from './container/MenusFormContainer';
+import CategoriesContainer from './container/CategoriesContainer';
 
 
 const MenusSection = styled.section`

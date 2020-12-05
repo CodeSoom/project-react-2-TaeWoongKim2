@@ -6,9 +6,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import styled from '@emotion/styled';
 
-import { setFood } from './slice';
+import { setFood } from 'slice';
 
-import { get, getRandomNumber } from './utils';
+import { get, getRandomNumber } from 'utils/common';
 
 
 const HomeSection = styled.section`

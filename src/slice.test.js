@@ -5,10 +5,10 @@ import reducer, {
   setCheckedCategory,
   clearCheckedCategory,
   changeMenuFields,
-} from './slice';
+} from 'slice';
 
-import FOODS from '../fixtures/foods';
-import CATEGORIES from '../fixtures/categories';
+import FOODS from '__fixtures__/foods';
+import CATEGORIES from '__fixtures__/categories';
 
 
 describe('reducer', () => {

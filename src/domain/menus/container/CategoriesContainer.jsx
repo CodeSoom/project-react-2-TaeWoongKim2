@@ -2,14 +2,15 @@ import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import Categories from './Categories';
+import { get } from 'utils/common';
 
 import {
   setCheckedCategory,
   clearCheckedCategory,
-} from './slice';
+} from 'slice';
 
-import { get } from './utils';
+import Categories from '../component/Categories';
+
 
 export default function CategoriesContainer() {
   const dispatch = useDispatch();

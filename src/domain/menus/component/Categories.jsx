@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 
-import { isEmpty } from './utils';
+import { isEmpty } from 'utils/common';
 
 
 const MenuList = styled.ul`
@@ -38,8 +38,8 @@ const MenuItem = styled.li(({ active }) => ({
     },
     '@media all and (max-width: 767px)': {
       height: '60px',
-      fontSize: '.5em',
-      lineHeight: '.5em',
+      fontSize: '.8em',
+      lineHeight: '.8em',
     },
   },
 }));

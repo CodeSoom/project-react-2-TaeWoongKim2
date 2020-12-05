@@ -2,12 +2,12 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  mode: process.env.NODE_ENV,
   entry: path.resolve(__dirname, 'src/index.jsx'),
   output: {
     path: path.resolve(`${__dirname}/build`),
     filename: 'bundle.js',
   },
-  mode: 'none',
   module: {
     rules: [
       {
@@ -22,6 +22,10 @@ module.exports = {
     ],
   },
   resolve: {
+    modules: [
+      path.join(__dirname, 'src'),
+      'node_modules',
+    ],
     extensions: ['.js', '.jsx'],
   },
   plugins: [

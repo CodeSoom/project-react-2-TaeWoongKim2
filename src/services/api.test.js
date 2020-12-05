@@ -1,7 +1,7 @@
-import { fetchFoods, fetchCategories } from './api';
 
-import FOODS from '../../fixtures/foods';
-import CATEGORIES from '../../fixtures/categories';
+import FOODS from '__fixtures__/foods';
+import CATEGORIES from '__fixtures__/categories';
+import { fetchFoods, fetchCategories } from './api';
 
 describe('api', () => {
   const mockFetch = (data) => {

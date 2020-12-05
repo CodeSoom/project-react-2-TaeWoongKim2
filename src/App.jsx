@@ -10,13 +10,11 @@ import { useDispatch } from 'react-redux';
 
 import styled from '@emotion/styled';
 
-import HomePage from './HomePage';
+import HomePage from 'domain/HomePage';
+import MenuPage from 'domain/menu/MenuPage';
+import MenusPage from 'domain/menus/MenusPage';
 
-import MenuPage from './MenuPage';
-
-import MenusPage from './MenusPage';
-
-import { loadCategoryData, loadFoodData } from './slice';
+import { loadCategoryData, loadFoodData } from 'slice';
 
 const GridLayout = styled.div`
   height: 100%;
@@ -34,7 +32,7 @@ const GridLayout = styled.div`
   background-size: cover;
   overflow-y: auto;
   & > header, footer, article, nav, div {
-    padding: 1.2em;
+    padding: 1em;
     background: fff0;
   }
   @media all and (max-width: 767px) {
@@ -53,11 +51,16 @@ const GridLayout = styled.div`
 
 const AppHeader = styled.header`
   grid-area: header;
+  display: flex;
+  align-items: center;
   & > h3 {
     margin: .2em;
     & > a {
       color: #fff;
       text-decoration: none;
+      &:hover {
+        color: #e91e63;
+      }
     }
   }
 `;
