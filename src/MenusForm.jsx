@@ -11,7 +11,8 @@ const MenuNameInput = styled.input`
   height: 28px;
   border: 0;
   border-radius: 4px;
-  padding: .2em 5em .2em 1em;
+  padding: .2em 1em;
+  box-shadow: 2px 4px 6px 4px #000;
 `;
 
 export default function MenusForm({

@@ -34,7 +34,7 @@ const GridLayout = styled.div`
   background-size: cover;
   overflow-y: auto;
   & > header, footer, article, nav, div {
-    padding: 1.2em;
+    padding: 1em;
     background: fff0;
   }
   @media all and (max-width: 767px) {
@@ -53,11 +53,16 @@ const GridLayout = styled.div`
 
 const AppHeader = styled.header`
   grid-area: header;
+  display: flex;
+  align-items: center;
   & > h3 {
     margin: .2em;
     & > a {
       color: #fff;
       text-decoration: none;
+      &:hover {
+        color: #e91e63;
+      }
     }
   }
 `;
