@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import FOODS from '__fixtures__/foods';
 
-import MenuPage from './MenuPage';
+import MenuContainer from './MenuContainer';
 
 
 const mockPush = jest.fn();
@@ -22,7 +22,7 @@ jest.mock('react-router-dom', () => ({
   },
 }));
 
-describe('MenuPage', () => {
+describe('MenuContainer', () => {
   const dispatch = jest.fn();
 
   beforeEach(() => {
@@ -36,16 +36,16 @@ describe('MenuPage', () => {
     }));
   });
 
-  function renderMenuPage() {
+  function renderMenuContainer() {
     return render((
       <MemoryRouter>
-        <MenuPage />
+        <MenuContainer />
       </MemoryRouter>
     ));
   }
 
   it('renders food name and description', () => {
-    const { container } = renderMenuPage();
+    const { container } = renderMenuContainer();
 
     expect(container).toHaveTextContent(FOODS[0].name);
 
