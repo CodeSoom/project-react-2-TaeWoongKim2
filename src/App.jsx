@@ -23,7 +23,7 @@ const GridLayout = styled.div`
     "nav-l header nav-r"
     "nav-l article nav-r"
     "nav-l footer nav-r";
-  grid-template-rows: 60px 1fr 100px;  
+  grid-template-rows: 60px 1fr auto;  
   grid-template-columns: 10% 1fr 10%;
   margin: 0;
   color: #eee;
@@ -40,7 +40,7 @@ const GridLayout = styled.div`
       "header"
       "article"
       "footer";
-    grid-template-rows: 80px 1fr 80px;  
+    grid-template-rows: 80px 1fr auto;  
     grid-template-columns: 1fr;
     height: 100vh;
     & > nav { 
@@ -55,9 +55,10 @@ const AppHeader = styled.header`
   align-items: center;
   & > h3 {
     margin: .2em;
+    font-size: 1.5em;
     & > a {
-      color: #fff;
       text-decoration: none;
+      color: #fff;
       &:hover {
         color: #e91e63;
       }
@@ -67,6 +68,7 @@ const AppHeader = styled.header`
 
 const AppFooter = styled.footer`
   grid-area: footer;
+  height: 1em;
 `;
 
 const AppLeftNavigator = styled.nav`
@@ -79,7 +81,7 @@ const AppRightNavigator = styled.nav`
 
 const AppArticle = styled.article`
   grid-area: article;
-  background-color: #ffffff0f;
+  background-color: #000000aa;
 `;
 
 export default function App() {

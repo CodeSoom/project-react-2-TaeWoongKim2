@@ -9,8 +9,8 @@ export function equal(key, value) {
 export function getRandomNumber(length = 0) {
   if (!length) return 0;
 
-  const min = 1;
-  const max = Math.floor(length);
+  const min = 0;
+  const max = Math.floor(length) - 1;
 
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
