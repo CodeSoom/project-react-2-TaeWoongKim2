@@ -10,6 +10,7 @@ import { setFood } from 'slice';
 
 import MenuPicker from '../component/MenuPicker';
 import MenuDishes from '../component/MenuDishes';
+import MenuButtons from '../component/MenuButtons';
 
 
 const MenuGrid = styled.div`
@@ -23,7 +24,6 @@ const MenuGrid = styled.div`
   grid-template-rows: 1fr auto;
   & div {
     padding: 0;
-    text-align: center;
   }
   @media all and (max-width: 767px) {
     grid-template-areas: 
@@ -33,23 +33,6 @@ const MenuGrid = styled.div`
     grid-template-columns: none;
     grid-template-rows: 1fr 4fr auto;
     grid-template-columns: none;
-  }
-`;
-
-const MenuButtons = styled.div`
-  grid-area: share;
-  text-align: center;
-  & > button {
-    height: 32px;
-    line-height: 32px;
-    color: #040404;
-    background: #ffffffa6;
-    border: 1px solid #000;
-    cursor: pointer;
-    &:hover {
-      background: #fff;
-      border: 1px solid #333;
-    };
   }
 `;
 
@@ -67,7 +50,7 @@ export default function MenuContainer() {
     dispatch(setFood(pickedMenu));
   }
 
-  function handleClick() {
+  function handlePickMenuClick() {
     pickMenu();
   }
 
@@ -80,10 +63,9 @@ export default function MenuContainer() {
     <MenuGrid>
       <MenuPicker menu={menu} />
       <MenuDishes menu={menu} />
-      <MenuButtons>
-        <hr />
-        <button type="button" onClick={handleClick}>다시 뽑기</button>
-      </MenuButtons>
+      <MenuButtons
+        onPickMenuClick={handlePickMenuClick}
+      />
     </MenuGrid>
   );
 }

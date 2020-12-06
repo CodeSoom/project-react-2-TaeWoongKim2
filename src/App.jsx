@@ -68,6 +68,7 @@ const AppHeader = styled.header`
 
 const AppFooter = styled.footer`
   grid-area: footer;
+  height: 1em;
 `;
 
 const AppLeftNavigator = styled.nav`

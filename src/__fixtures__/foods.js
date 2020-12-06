@@ -25,7 +25,7 @@ const foods = [
     name: '된장찌개',
     description: '',
     category: '한식',
-    image: 'https://lh3.googleusercontent.com/proxy/g4_lNK5DNVBVNjvNasE7EZUbX3DGFWEvAjOBSgnGE56bNt3KSOuSYF9Ki9p5Cj0KPZAYIWwhBgorO-62T13m9rDJOTnNpImCr7VwKumrMp_4Q5kY4IJxnLYS5VeKLehLqLId_bO1bM_sLfD8JWs',
+    image: 'https://www.city.kr/files/attach/images/164/325/528/004/dc624d1a897b9c8eebf97142632d13fa.jpg',
     dishes: [],
   },
   {
@@ -41,15 +41,15 @@ const foods = [
     name: '해장국',
     description: '',
     category: '한식',
-    image: '',
+    image: 'https://cdn.pixabay.com/photo/2017/09/04/11/05/broiler-market-2713540_1280.jpg',
     dishes: [],
   },
   {
     id: 1005,
-    name: '순대국',
+    name: '순대국밥',
     description: '',
     category: '한식',
-    image: '',
+    image: 'https://ohfarm2018.imghost.cafe24.com/goods/soonde/gukbap/2020/02/soonde01.jpg',
     dishes: [],
   },
   {
@@ -57,7 +57,7 @@ const foods = [
     name: '설렁탕',
     description: '',
     category: '한식',
-    image: '',
+    image: 'https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/3QTb/image/doy7JOx4eaH8sU-_a6WBn7Q3klE.jpg',
     dishes: [],
   },
   {
@@ -65,7 +65,7 @@ const foods = [
     name: '순두부찌개',
     description: '',
     category: '한식',
-    image: '',
+    image: 'https://image.freepik.com/free-photo/kimchi-jjigae-or-kimchi-soup-with-tofu-and-egg-or-korean-kimchi-stew_1339-108315.jpg',
     dishes: [],
   },
   {
@@ -73,7 +73,7 @@ const foods = [
     name: '부대찌개',
     description: '',
     category: '한식',
-    image: '',
+    image: 'https://static.wtable.co.kr/image/production/service/recipe/360/1837159a-d00d-4d7c-90e0-9edce7dcd687.jpg',
     dishes: [],
   },
   {
@@ -81,7 +81,7 @@ const foods = [
     name: '삼계탕',
     description: '',
     category: '한식',
-    image: '',
+    image: 'https://image.auction.co.kr/itemimage/1c/ba/d2/1cbad2b9e6.jpg',
     dishes: [],
   },
   {
@@ -89,7 +89,7 @@ const foods = [
     name: '감자탕',
     description: '',
     category: '한식',
-    image: '',
+    image: 'https://p0.pikist.com/photos/1011/400/gamjatang-food-bone-toy-box-bath-haejangguk-republic-of-korea-delicious-eat-delicious-food.jpg',
     dishes: [],
   },
   {
@@ -97,7 +97,7 @@ const foods = [
     name: '추어탕',
     description: '',
     category: '한식',
-    image: '',
+    image: 'https://d3h1lg3ksw6i6b.cloudfront.net/media/image/2019/05/15/6206ae3ba6d84d0eb644c5b3106c4c42_Chuotang_image4.jpg',
     dishes: [],
   },
   {
@@ -105,7 +105,7 @@ const foods = [
     name: '제육볶음',
     description: '',
     category: '한식',
-    image: '',
+    image: 'https://yorivery.com//data/goods/1000000193_detail_012.jpg',
     dishes: [],
   },
   {
@@ -113,7 +113,7 @@ const foods = [
     name: '보쌈정식',
     description: '',
     category: '한식',
-    image: '',
+    image: 'https://www.manjok.net/fileupdown/menu/IMG150811224107.jpg',
     dishes: [],
   },
   {
@@ -121,7 +121,7 @@ const foods = [
     name: '낚지볶음',
     description: '',
     category: '한식',
-    image: '',
+    image: 'https://image.freepik.com/free-photo/stir-fried-octopus-or-squid-and-korean-spicy-paste-osam-bulgogi-with-rice_1339-111602.jpg',
     dishes: [],
   },
   {
@@ -129,7 +129,7 @@ const foods = [
     name: '수제비',
     description: '',
     category: '한식',
-    image: '',
+    image: 'https://cdn.cahierdeseoul.com/2012/07/sujebi-cahier-de-seoul06.jpg',
     dishes: [],
   },
   {
@@ -137,15 +137,7 @@ const foods = [
     name: '전',
     description: '',
     category: '한식',
-    image: '',
-    dishes: [],
-  },
-  {
-    id: 1017,
-    name: '전',
-    description: '',
-    category: '한식',
-    image: '',
+    image: 'https://static.wtable.co.kr/image/production/service/recipe/656/51a6af98-f69f-4c89-9437-879b3540c895.jpg',
     dishes: [],
   },
   {
@@ -153,7 +145,7 @@ const foods = [
     name: '닭갈비',
     description: '',
     category: '한식',
-    image: '',
+    image: 'https://cdn.pixabay.com/photo/2016/04/06/01/16/chicken-chops-1310801_1280.jpg',
     dishes: [],
   },
   {
@@ -161,7 +153,7 @@ const foods = [
     name: '육개장',
     description: '',
     category: '한식',
-    image: '',
+    image: 'https://pds.joins.com/news/component/htmlphoto_mmdata/201811/14/2e03da4a-73d2-444f-be2c-9faffcb60ffd.jpg',
     dishes: [],
   },
   {
@@ -169,7 +161,7 @@ const foods = [
     name: '김치볶음밥',
     description: '',
     category: '한식',
-    image: '',
+    image: 'https://cbmpress.sfo2.digitaloceanspaces.com/tfood/2516102861_Dou6sN2f_83893dfb9a46cdd27c7d3d51eff246dc766b2dc8.jpg',
     dishes: [],
   },
   {
@@ -177,7 +169,7 @@ const foods = [
     name: '짜장면',
     description: '',
     category: '중식',
-    image: '',
+    image: 'https://img.insight.co.kr/static/2018/04/15/700/1qe9f6lw409d493441ai.jpg',
     dishes: [],
   },
   {
@@ -185,7 +177,7 @@ const foods = [
     name: '짬뽕',
     description: '',
     category: '중식',
-    image: '',
+    image: 'https://contents.lotteon.com/itemimage/LO/10/51/51/85/75/_1/05/15/18/57/6/LO1051518575_1051518576_1.jpg/dims/resizef/720X720',
     dishes: [],
   },
   {
@@ -193,7 +185,7 @@ const foods = [
     name: '잡채밥',
     description: '',
     category: '중식',
-    image: '',
+    image: 'https://kr.lkk.com/-/media/kr-site---homecook/185_kr_600.jpg',
     dishes: [],
   },
   {
@@ -201,7 +193,7 @@ const foods = [
     name: '새우볶음밥',
     description: '',
     category: '중식',
-    image: '',
+    image: 'https://foodyap.co.kr/shopimages/goldplate1/035001000005.jpg',
     dishes: [],
   },
   {
@@ -209,7 +201,7 @@ const foods = [
     name: '게살볶음밥',
     description: '',
     category: '중식',
-    image: '',
+    image: 'https://recipe1.ezmember.co.kr/cache/recipe/2018/09/07/ae98fdcce890b67d231a871b8a4f7caa1.jpg',
     dishes: [],
   },
   {
@@ -217,7 +209,7 @@ const foods = [
     name: '유산슬밥',
     description: '',
     category: '중식',
-    image: '',
+    image: 'https://cdn.crowdpic.net/list-thumb/thumb_l_2D9D2F22BDDDD2B491EFD71985A07E6C.jpg',
     dishes: [],
   },
   {
@@ -225,7 +217,7 @@ const foods = [
     name: '마파두부밥',
     description: '',
     category: '중식',
-    image: '',
+    image: 'https://recipe1.ezmember.co.kr/cache/recipe/2018/08/06/754e47ca734a372b5f1c1fd3ce33689d.jpg',
     dishes: [],
   },
   {
@@ -233,7 +225,7 @@ const foods = [
     name: '송이밥',
     description: '',
     category: '중식',
-    image: '',
+    image: 'https://recipe1.ezmember.co.kr/cache/recipe/2018/02/01/7518b72bfc4fc06d05cdc72986709c721.jpg',
     dishes: [],
   },
   {
@@ -241,7 +233,7 @@ const foods = [
     name: '탕수육',
     description: '',
     category: '중식',
-    image: '',
+    image: 'https://www.chungjungone.com/knowhow/images/blog/recipe/r279_20180122/1.jpg',
     dishes: [],
   },
   {
@@ -249,7 +241,7 @@ const foods = [
     name: '깐풍기',
     description: '',
     category: '중식',
-    image: '',
+    image: 'https://www.unileverfoodsolutions.co.kr/wu_cache/img/089/mis_50075938/crispy_chicken_0000x0000_0.jpg',
     dishes: [],
   },
   {
@@ -265,7 +257,7 @@ const foods = [
     name: '화덕피자',
     description: '',
     category: '양식',
-    image: 'https://lh3.googleusercontent.com/proxy/AFgi7vlryg5-l93b4rrnFLwm7VyOezux05c_bxCGq06_PoWTaZb6N9hDSHv2S7hXzJCEsf8IkMhFQmOk5Nt773jL_qJZYJCJGkK9pPty3Tc',
+    image: 'https://cdn.crowdpic.net/list-thumb/thumb_l_EBE8CE397640C87DA93E103266752075.jpg',
     dishes: [],
   },
   {
@@ -425,7 +417,7 @@ const foods = [
     name: '라면',
     description: '',
     category: '분식',
-    image: 'https://lh3.googleusercontent.com/proxy/yq0eNK8s2KNxJj12Gq8P7GKCJkR3raSSjuAJ7BiEJsCX_DrH6NSm6dDD_sU2uFsObvCCfRB1OgHKGRbLCX_VJb-E7v9ZwZnDl1QDCNdFV09yZY5LhLiPWD5cWabO0jYAQleo8uq8PjfUHX4YKiesQnkjoRmD6-RC9VkdXF-r3L6DMfRJyak65oWpdhjCWlW3qYrjysbX6uJuNnkjITD4L4g6gJgW8uUphw',
+    image: 'https://image.freepik.com/free-photo/korean-instant-noodles-with-kimchi-and-egg_1339-117193.jpg',
     dishes: [],
   },
   {
@@ -441,7 +433,7 @@ const foods = [
     name: '쫄면',
     description: '',
     category: '분식',
-    image: 'https://lh3.googleusercontent.com/proxy/8hRBibri2FFvHsBPNvFltGOKeR_eKjAUmW2evQ2TaKx2OCvib2gj3rrxqy93Dz7UGyoV2iEN7l5BXgve3GwMxBzUN2rzWpYc0yKx2RJoVWHij31iFeiMFiIeWVIeJxWotMJravJCYae5wKjsrQhkkpX-kdpkoDlNMvVDiNUWqULr2juLQ6F6nWCP9XNB23ciQC6A98CfrfQAsA_WPLTjvX7BS2nkSoEYfA',
+    image: 'https://cdn.pixabay.com/photo/2017/09/10/14/23/jjolmyeon-2735716_1280.jpg',
     dishes: [],
   },
   {
