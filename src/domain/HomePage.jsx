@@ -4,11 +4,11 @@ import { useHistory } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
 
+import { playMenuPicker } from 'slice';
+
+import { get, getRandomSomethingPicker } from 'utils/common';
+
 import styled from '@emotion/styled';
-
-import { setFood } from 'slice';
-
-import { get, getRandomNumber } from 'utils/common';
 
 
 const HomeSection = styled.section`
@@ -65,17 +65,20 @@ const HomeContent = styled.div`
 `;
 
 export default function HomePage() {
-  const history = useHistory();
-
   const dispatch = useDispatch();
 
-  const foods = useSelector(get('foods'));
+  const history = useHistory();
+
+  const menus = useSelector(get('foods'));
+  const maxims = useSelector(get('foodMaxims'));
 
   function handleMenuPickerClick() {
-    const index = getRandomNumber(foods.length);
-    const selectedFood = foods.find((food) => food.id === foods[index].id);
+    const pickedMenu = getRandomSomethingPicker(menus);
+    const pickedMaxim = getRandomSomethingPicker(maxims);
 
-    dispatch(setFood(selectedFood));
+    dispatch(playMenuPicker(
+      { food: pickedMenu, foodMaxim: pickedMaxim },
+    ));
 
     history.push('/menu');
   }

@@ -2,11 +2,13 @@ import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
+import { playMenuPicker } from 'slice';
+
+import { get, getRandomSomethingPicker } from 'utils/common';
+
 import styled from '@emotion/styled';
 
-import { get, getRandomNumber } from 'utils/common';
-
-import { setFood } from 'slice';
+import LOADING from 'assets/images/food-loading.gif';
 
 import MenuPicker from '../component/MenuPicker';
 import MenuDishes from '../component/MenuDishes';
@@ -22,6 +24,7 @@ const MenuGrid = styled.div`
       "share share";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr auto;
+  grid-gap: 1em;
   & div {
     padding: 0;
   }
@@ -36,33 +39,53 @@ const MenuGrid = styled.div`
   }
 `;
 
+const LoadingImage = styled.img`
+  height: 33.33%;
+  @media all and (max-width: 767px) {
+    height: 12em;
+  }
+`;
+
 export default function MenuContainer() {
   const dispatch = useDispatch();
 
   const menu = useSelector(get('food'));
   const menus = useSelector(get('foods'));
+  const maxim = useSelector(get('foodMaxim'));
+  const maxims = useSelector(get('foodMaxims'));
+  const loading = useSelector(get('foodPickerLoading'));
 
-  function pickMenu() {
-    const menusCount = menus.length;
-    const index = getRandomNumber(menusCount);
-    const pickedMenu = menus[index]; // menus.find((food) => food.id === menus[index].id);
+  function dispatchMenuPicker() {
+    const pickedMenu = getRandomSomethingPicker(menus);
+    const pickedMaxim = getRandomSomethingPicker(maxims);
 
-    dispatch(setFood(pickedMenu));
+    dispatch(playMenuPicker(
+      { food: pickedMenu, foodMaxim: pickedMaxim },
+    ));
   }
 
   function handlePickMenuClick() {
-    pickMenu();
+    dispatchMenuPicker();
+  }
+
+  if (loading) {
+    return <LoadingImage src={LOADING} alt="Loading..." />;
   }
 
   if (!menu) {
-    pickMenu();
-    return <p>정성껏 메뉴 선정 중...</p>;
+    dispatchMenuPicker();
+    return <></>;
   }
 
   return (
     <MenuGrid>
-      <MenuPicker menu={menu} />
-      <MenuDishes menu={menu} />
+      <MenuPicker
+        menu={menu}
+        maxim={maxim}
+      />
+      <MenuDishes
+        menu={menu}
+      />
       <MenuButtons
         onPickMenuClick={handlePickMenuClick}
       />

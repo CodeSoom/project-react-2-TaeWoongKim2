@@ -5,7 +5,6 @@ import AwesomeSliderStyles from 'react-awesome-slider/src/styles';
 
 import styled from '@emotion/styled';
 
-
 const Dishes = styled.div`
   grid-area: dish;
   display: flex;
@@ -27,7 +26,12 @@ const Dishes = styled.div`
     --control-bullet-active-color: #fff;
     --loader-bar-color: #263e0f;
     --loader-bar-height: 6px;
+  }
+  @media all and (max-width: 767px) {
+    & .awssld {
+      height: 50%;
     }
+  }
 `;
 
 export default function MenuDishes({ menu }) {

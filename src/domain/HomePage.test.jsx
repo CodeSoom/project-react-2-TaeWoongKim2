@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { render, fireEvent } from '@testing-library/react';
 
 import FOODS from '__fixtures__/foods';
+import MAXIMS from '__fixtures__/foodMaxims';
+
 import HomePage from './HomePage';
 
 
@@ -30,6 +32,8 @@ describe('HomePage', () => {
     useSelector.mockImplementation((selector) => selector({
       food: FOODS[0],
       foods: FOODS,
+      foodMaxim: MAXIMS[0],
+      foodMaxims: MAXIMS,
     }));
   });
 
