@@ -13,6 +13,7 @@ const { actions, reducer } = createSlice({
     foods: [],
     foodMaxim: null,
     foodMaxims: [],
+    foodPickerLoading: false,
     categories: [],
     checkedCategory: {},
     menusFields: {
@@ -42,6 +43,20 @@ const { actions, reducer } = createSlice({
       return {
         ...state,
         foodMaxims,
+      };
+    },
+    setFoodPickerLoading(state, { payload: foodPickerLoading }) {
+      return {
+        ...state,
+        foodPickerLoading,
+      };
+    },
+    setMenuPicker(state, { payload: { food, foodMaxim } }) {
+      return {
+        ...state,
+        food,
+        foodMaxim,
+        foodPickerLoading: true,
       };
     },
     setCategories(state, { payload: categories }) {
@@ -87,6 +102,8 @@ export const {
   setFoods,
   setFoodMaxim,
   setFoodMaxims,
+  setFoodPickerLoading,
+  setMenuPicker,
   setCategories,
   setCheckedCategory,
   clearCheckedCategory,
@@ -120,6 +137,17 @@ export function loadCategoryData() {
     const categories = await fetchCategories();
 
     dispatch(setCategories(categories));
+  };
+}
+
+export function playMenuPicker({ food, foodMaxim }) {
+  const delay = 2000; // 2sec
+
+  return (dispatch) => {
+    dispatch(setMenuPicker({ food, foodMaxim }));
+    setTimeout(() => {
+      dispatch(setFoodPickerLoading(false));
+    }, delay);
   };
 }
 

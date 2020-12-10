@@ -29,7 +29,7 @@ const Dishes = styled.div`
   }
   @media all and (max-width: 767px) {
     & .awssld {
-      height: 60%;
+      height: 50%;
     }
   }
 `;

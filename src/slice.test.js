@@ -3,6 +3,8 @@ import reducer, {
   setFoods,
   setFoodMaxim,
   setFoodMaxims,
+  setFoodPickerLoading,
+  setMenuPicker,
   setCategories,
   setCheckedCategory,
   clearCheckedCategory,
@@ -21,6 +23,7 @@ describe('reducer', () => {
       foods: [],
       foodMaxim: null,
       foodMaxims: [],
+      foodPickerLoading: false,
       categories: [],
       checkedCategory: {},
       menusFields: {
@@ -36,7 +39,7 @@ describe('reducer', () => {
   });
 
   describe('setFood', () => {
-    it('changes status called "food"', () => {
+    it('changes state called "food"', () => {
       const initialState = {
         food: null,
       };
@@ -50,7 +53,7 @@ describe('reducer', () => {
   });
 
   describe('setFoods', () => {
-    it('changes status called "foods"', () => {
+    it('changes state called "foods"', () => {
       const initialState = {
         foods: [],
       };
@@ -62,7 +65,7 @@ describe('reducer', () => {
   });
 
   describe('setFoodMaxim', () => {
-    it('changes status called "foodMaxim"', () => {
+    it('changes state called "foodMaxim"', () => {
       const initialState = {
         foodMaxim: null,
       };
@@ -76,7 +79,7 @@ describe('reducer', () => {
   });
 
   describe('setFoodMaxims', () => {
-    it('changes status called "foodMaxims"', () => {
+    it('changes state called "foodMaxims"', () => {
       const initialState = {
         foodMaxims: [],
       };
@@ -87,8 +90,37 @@ describe('reducer', () => {
     });
   });
 
+  describe('setFoodPickerLoading', () => {
+    it('changes state called "foodPickerLoading"', () => {
+      const initialState = {
+        foodPickerLoading: false,
+      };
+
+      const state = reducer(initialState, setFoodPickerLoading(true));
+
+      expect(state.foodPickerLoading).toBeTruthy();
+    });
+  });
+
+  describe('setMenuPicker', () => {
+    it('changes state associated menu random picker', () => {
+      const initialState = {
+        food: null,
+        foodMaxim: null,
+        foodPickerLoading: false,
+      };
+
+      const tobeState = { food: FOODS[0], foodMaxim: MAXIMS[0] };
+      const state = reducer(initialState, setMenuPicker(tobeState));
+
+      expect(state.food).toBe(tobeState.food);
+      expect(state.foodMaxim).toBe(tobeState.foodMaxim);
+      expect(state.foodPickerLoading).toBeTruthy();
+    });
+  });
+
   describe('setCategories', () => {
-    it('changes status called "categories"', () => {
+    it('changes state called "categories"', () => {
       const initialState = {
         categories: [],
       };

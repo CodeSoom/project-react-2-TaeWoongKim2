@@ -2,11 +2,13 @@ import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
+import { playMenuPicker } from 'slice';
+
+import { get, getRandomSomethingPicker } from 'utils/common';
+
 import styled from '@emotion/styled';
 
-import { get, getRandomNumber } from 'utils/common';
-
-import { setFood, setFoodMaxim } from 'slice';
+import LOADING from 'assets/images/food-loading.gif';
 
 import MenuPicker from '../component/MenuPicker';
 import MenuDishes from '../component/MenuDishes';
@@ -37,6 +39,13 @@ const MenuGrid = styled.div`
   }
 `;
 
+const LoadingImage = styled.img`
+  height: 33.33%;
+  @media all and (max-width: 767px) {
+    height: 12em;
+  }
+`;
+
 export default function MenuContainer() {
   const dispatch = useDispatch();
 
@@ -44,32 +53,28 @@ export default function MenuContainer() {
   const menus = useSelector(get('foods'));
   const maxim = useSelector(get('foodMaxim'));
   const maxims = useSelector(get('foodMaxims'));
+  const loading = useSelector(get('foodPickerLoading'));
 
-  function pickMenu() {
-    const menusCount = menus.length;
-    const index = getRandomNumber(menusCount);
-    const pickedMenu = menus[index];
+  function dispatchMenuPicker() {
+    const pickedMenu = getRandomSomethingPicker(menus);
+    const pickedMaxim = getRandomSomethingPicker(maxims);
 
-    dispatch(setFood(pickedMenu));
-  }
-
-  function pickMaxim() {
-    const maximsCount = maxims.length;
-    const index = getRandomNumber(maximsCount);
-    const pickedMaxim = maxims[index];
-
-    dispatch(setFoodMaxim(pickedMaxim));
+    dispatch(playMenuPicker(
+      { food: pickedMenu, foodMaxim: pickedMaxim },
+    ));
   }
 
   function handlePickMenuClick() {
-    pickMenu();
-    pickMaxim();
+    dispatchMenuPicker();
+  }
+
+  if (loading) {
+    return <LoadingImage src={LOADING} alt="Loading..." />;
   }
 
   if (!menu) {
-    pickMenu();
-    pickMaxim();
-    return <p>정성껏 메뉴 선정 중...</p>;
+    dispatchMenuPicker();
+    return <></>;
   }
 
   return (
@@ -78,7 +83,9 @@ export default function MenuContainer() {
         menu={menu}
         maxim={maxim}
       />
-      <MenuDishes menu={menu} />
+      <MenuDishes
+        menu={menu}
+      />
       <MenuButtons
         onPickMenuClick={handlePickMenuClick}
       />
