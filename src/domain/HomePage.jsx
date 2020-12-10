@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import styled from '@emotion/styled';
 
-import { setFood } from 'slice';
+import { setFood, setFoodMaxim } from 'slice';
 
 import { get, getRandomNumber } from 'utils/common';
 
@@ -70,12 +70,18 @@ export default function HomePage() {
   const dispatch = useDispatch();
 
   const foods = useSelector(get('foods'));
+  const maxims = useSelector(get('foodMaxims'));
 
   function handleMenuPickerClick() {
-    const index = getRandomNumber(foods.length);
-    const selectedFood = foods.find((food) => food.id === foods[index].id);
+    const foodIndex = getRandomNumber(foods.length);
+    const selectedFood = foods.find((food) => food.id === foods[foodIndex].id);
 
     dispatch(setFood(selectedFood));
+
+    const maximIndex = getRandomNumber(maxims.length);
+    const selectedMaxim = maxims.find((maxim) => maxim.id === maxims[maximIndex].id);
+
+    dispatch(setFoodMaxim(selectedMaxim));
 
     history.push('/menu');
   }

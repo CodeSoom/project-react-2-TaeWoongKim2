@@ -6,7 +6,7 @@ import styled from '@emotion/styled';
 
 import { get, getRandomNumber } from 'utils/common';
 
-import { setFood } from 'slice';
+import { setFood, setFoodMaxim } from 'slice';
 
 import MenuPicker from '../component/MenuPicker';
 import MenuDishes from '../component/MenuDishes';
@@ -41,17 +41,28 @@ export default function MenuContainer() {
 
   const menu = useSelector(get('food'));
   const menus = useSelector(get('foods'));
+  const maxim = useSelector(get('foodMaxim'));
+  const maxims = useSelector(get('foodMaxims'));
 
   function pickMenu() {
     const menusCount = menus.length;
     const index = getRandomNumber(menusCount);
-    const pickedMenu = menus[index]; // menus.find((food) => food.id === menus[index].id);
+    const pickedMenu = menus[index];
 
     dispatch(setFood(pickedMenu));
   }
 
+  function pickMaxim() {
+    const maximsCount = maxims.length;
+    const index = getRandomNumber(maximsCount);
+    const pickedMaxim = maxims[index];
+
+    dispatch(setFoodMaxim(pickedMaxim));
+  }
+
   function handlePickMenuClick() {
     pickMenu();
+    pickMaxim();
   }
 
   if (!menu) {
@@ -61,7 +72,10 @@ export default function MenuContainer() {
 
   return (
     <MenuGrid>
-      <MenuPicker menu={menu} />
+      <MenuPicker
+        menu={menu}
+        maxim={maxim}
+      />
       <MenuDishes menu={menu} />
       <MenuButtons
         onPickMenuClick={handlePickMenuClick}

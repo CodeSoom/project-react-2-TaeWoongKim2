@@ -1,6 +1,8 @@
 import reducer, {
   setFood,
   setFoods,
+  setFoodMaxim,
+  setFoodMaxims,
   setCategories,
   setCheckedCategory,
   clearCheckedCategory,
@@ -8,6 +10,7 @@ import reducer, {
 } from 'slice';
 
 import FOODS from '__fixtures__/foods';
+import MAXIMS from '__fixtures__/foodMaxims';
 import CATEGORIES from '__fixtures__/categories';
 
 
@@ -16,6 +19,8 @@ describe('reducer', () => {
     const initialState = {
       food: null,
       foods: [],
+      foodMaxim: null,
+      foodMaxims: [],
       categories: [],
       checkedCategory: {},
       menusFields: {
@@ -53,6 +58,32 @@ describe('reducer', () => {
       const state = reducer(initialState, setFoods(FOODS));
 
       expect(state.foods).toHaveLength(FOODS.length);
+    });
+  });
+
+  describe('setFoodMaxim', () => {
+    it('changes status called "foodMaxim"', () => {
+      const initialState = {
+        foodMaxim: null,
+      };
+
+      const maxim = MAXIMS[0];
+
+      const state = reducer(initialState, setFoodMaxim(maxim));
+
+      expect(state.foodMaxim).toEqual(maxim);
+    });
+  });
+
+  describe('setFoodMaxims', () => {
+    it('changes status called "foodMaxims"', () => {
+      const initialState = {
+        foodMaxims: [],
+      };
+
+      const state = reducer(initialState, setFoodMaxims(MAXIMS));
+
+      expect(state.foodMaxims).toHaveLength(MAXIMS.length);
     });
   });
 

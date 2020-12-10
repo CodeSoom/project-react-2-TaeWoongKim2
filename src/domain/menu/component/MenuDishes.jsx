@@ -5,7 +5,6 @@ import AwesomeSliderStyles from 'react-awesome-slider/src/styles';
 
 import styled from '@emotion/styled';
 
-
 const Dishes = styled.div`
   grid-area: dish;
   display: flex;

@@ -1,12 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { fetchFoods, fetchCategories } from './services/api';
+import {
+  fetchFoods,
+  fetchFoodMaxims,
+  fetchCategories,
+} from './services/api';
 
 const { actions, reducer } = createSlice({
   name: 'application',
   initialState: {
     food: null,
     foods: [],
+    foodMaxim: null,
+    foodMaxims: [],
     categories: [],
     checkedCategory: {},
     menusFields: {
@@ -24,6 +30,18 @@ const { actions, reducer } = createSlice({
       return {
         ...state,
         foods,
+      };
+    },
+    setFoodMaxim(state, { payload: foodMaxim }) {
+      return {
+        ...state,
+        foodMaxim,
+      };
+    },
+    setFoodMaxims(state, { payload: foodMaxims }) {
+      return {
+        ...state,
+        foodMaxims,
       };
     },
     setCategories(state, { payload: categories }) {
@@ -67,6 +85,8 @@ const { actions, reducer } = createSlice({
 export const {
   setFood,
   setFoods,
+  setFoodMaxim,
+  setFoodMaxims,
   setCategories,
   setCheckedCategory,
   clearCheckedCategory,
@@ -83,6 +103,16 @@ export function loadFoodData() {
   };
 }
 
+export function loadFoodMaximData() {
+  return async (dispatch) => {
+    dispatch(setFoodMaxims([]));
+
+    const foodMaxims = await fetchFoodMaxims();
+
+    dispatch(setFoodMaxims(foodMaxims));
+  };
+}
+
 export function loadCategoryData() {
   return async (dispatch) => {
     dispatch(setCategories([]));
@@ -92,5 +122,6 @@ export function loadCategoryData() {
     dispatch(setCategories(categories));
   };
 }
+
 
 export default reducer;

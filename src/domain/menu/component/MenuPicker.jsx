@@ -30,19 +30,16 @@ const MenuPick = styled.div`
   }
 `;
 
-export default function MenuPicker({ menu = {} }) {
+export default function MenuPicker({ menu = {}, maxim = {} }) {
   const { name } = menu;
+  const { content, author } = maxim;
 
   return (
     <MenuPick>
       <h3>{name}</h3>
       <hr />
       <p>
-        오늘
-        {' '}
-        {name}
-        {' '}
-        각 이다!
+        {content || '그저 랜덤 확률이지만, 기가막힌 선택이라고 생각해 👍🏻'}
       </p>
     </MenuPick>
   );

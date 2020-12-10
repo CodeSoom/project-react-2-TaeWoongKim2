@@ -14,7 +14,11 @@ import HomePage from 'domain/HomePage';
 import MenuPage from 'domain/menu/MenuPage';
 import MenusPage from 'domain/menus/MenusPage';
 
-import { loadCategoryData, loadFoodData } from 'slice';
+import {
+  loadFoodData,
+  loadFoodMaximData,
+  loadCategoryData,
+} from 'slice';
 
 const GridLayout = styled.div`
   height: 100%;
@@ -23,7 +27,7 @@ const GridLayout = styled.div`
     "nav-l header nav-r"
     "nav-l article nav-r"
     "nav-l footer nav-r";
-  grid-template-rows: 60px 1fr auto;  
+  grid-template-rows: 80px 1fr auto;  
   grid-template-columns: 10% 1fr 10%;
   margin: 0;
   color: #eee;
@@ -40,7 +44,7 @@ const GridLayout = styled.div`
       "header"
       "article"
       "footer";
-    grid-template-rows: 80px 1fr auto;  
+    grid-template-rows: 60px 1fr auto;  
     grid-template-columns: 1fr;
     height: 100vh;
     & > nav { 
@@ -89,6 +93,7 @@ export default function App() {
 
   useEffect(() => {
     dispatch(loadFoodData());
+    dispatch(loadFoodMaximData());
     dispatch(loadCategoryData());
   });
 
@@ -105,7 +110,7 @@ export default function App() {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/menu" component={MenuPage} />
-          <Route exact path="/menus" component={MenusPage} />
+          <Route path="/menus" component={MenusPage} />
         </Switch>
       </AppArticle>
       <AppFooter />
