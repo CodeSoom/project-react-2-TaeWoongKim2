@@ -22,6 +22,7 @@ const MenuGrid = styled.div`
       "share share";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr auto;
+  grid-gap: 1em;
   & div {
     padding: 0;
   }
@@ -67,6 +68,7 @@ export default function MenuContainer() {
 
   if (!menu) {
     pickMenu();
+    pickMaxim();
     return <p>정성껏 메뉴 선정 중...</p>;
   }
 

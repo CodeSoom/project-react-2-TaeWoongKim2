@@ -26,7 +26,12 @@ const Dishes = styled.div`
     --control-bullet-active-color: #fff;
     --loader-bar-color: #263e0f;
     --loader-bar-height: 6px;
+  }
+  @media all and (max-width: 767px) {
+    & .awssld {
+      height: 60%;
     }
+  }
 `;
 
 export default function MenuDishes({ menu }) {

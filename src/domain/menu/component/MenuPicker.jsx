@@ -18,6 +18,9 @@ const MenuPick = styled.div`
   & > p {
     margin: 1em 0 0 0;
     font-size: 1.2em;
+    &:last-child {
+      text-align: right;
+    }
     @media all and (max-width: 767px) {
       font-size: 1em;
     }
@@ -36,10 +39,15 @@ export default function MenuPicker({ menu = {}, maxim = {} }) {
 
   return (
     <MenuPick>
-      <h3>{name}</h3>
+      <h3>
+        {`🗳 ${name}`}
+      </h3>
       <hr />
       <p>
         {content || '그저 랜덤 확률이지만, 기가막힌 선택이라고 생각해 👍🏻'}
+      </p>
+      <p>
+        {author ? `- ${author} -` : '- Menu Picker -'}
       </p>
     </MenuPick>
   );
